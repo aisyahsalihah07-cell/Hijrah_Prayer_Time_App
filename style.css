@@ -1,0 +1,121 @@
+/* GENERAL SETTINGS */
+* {margin: 0;padding: 0;box-sizing: border-box;}
+body {font-family: Arial, sans-serif;background-color: #F3F5E9;background-image: url("image/Motif7.png");background-size: cover;background-position: center center;background-repeat: no-repeat;background-attachment: fixed;color: #284F3B;padding: 25px;}
+header {text-align: center;margin-bottom: 30px;}
+header h1 {font-size: 30px;color: #F3F5E9;}
+header p {color: #F3F5E9;margin-top: 8px;}
+
+/* NAVIGATION */
+nav {display: flex;justify-content: center;gap: 10px;margin-top: 25px;}
+nav button {padding: 12px 25px;border: none;border-radius: 8px;background-color: #DCE9D5;color: #284F3B;cursor: pointer;font-size: 14px;}
+nav button:hover {background-color: #BFD6B5;}
+nav button.active {background-color: #284F3B;color: white;}
+
+/* PAGE AND SECTIONS */
+.page {max-width: 850px;margin: auto;}
+[hidden] {display: none !important;}
+section {background-color: white;padding: 22px;margin-bottom: 20px;border-radius: 12px;}
+section h2 {font-size: 19px;margin-bottom: 18px;}
+
+/* LOCATION */
+.location-section {display: flex;align-items: center;gap: 12px;flex-wrap: wrap;}
+.location-section label {font-weight: bold;width: 100%;}
+select {flex: 1;min-width: 200px;padding: 12px;border: 1px solid #CCCCCC;border-radius: 7px;background-color: white;color: #284F3B;font-size: 14px;}
+#refreshBtn {padding: 12px 20px;background-color: #284F3B;color: white;border: none;border-radius: 7px;cursor: pointer;}
+
+/* CLOCK */
+.current-section {text-align: center;background-color: #DCE9D5;padding: 15px;}
+.clock-label {font-size: 15px;font-weight: bold;color: #52665A;margin-bottom: 8px;}
+#currentDate {color: #52665A;font-size: 14px;}
+#currentTime {font-size: 26px;font-weight: bold;margin: 8px 0;}
+#apiMessage {color: #52665A;font-size: 12px;}
+
+/* NEXT PRAYER */
+.next-prayer {text-align: center;background-color: #284F3B;color: white;padding: 30px;}
+.next-prayer p {font-size: 13px;}
+.next-prayer h2 {font-size: 25px;margin: 12px 0;}
+#countdown {font-size: 38px;margin-bottom: 10px;}
+
+/* DAILY PRAYER TRACKER */
+.tracker-section h2 {margin-bottom: 10px;}
+.tracker-container {display: flex;justify-content: space-around;flex-wrap: wrap;gap: 10px;margin-top: 25px;}
+.tracker-item {text-align: center;}
+.tracker-circle {width: 60px;height: 60px;border-radius: 50%;border: 3px solid #D5B836;background-color: white;color: #514000;font-size: 30px;font-weight: bold;cursor: pointer;}
+.tracker-circle.completed {background-color: #FFE65B;border-color: #D5B836;}
+.tracker-item p {margin-top: 10px;font-size: 15px;}
+#trackerMessage {text-align: center;margin-top: 20px;font-weight: bold;color: #52665A;}
+
+/* PRAYER TIME CARDS */
+#prayerTimes {display: grid;grid-template-columns: repeat(2, 1fr);gap: 15px;margin-top: 20px;}
+#selectedPrayerTimes {display: grid;grid-template-columns: repeat(2, 1fr);gap: 15px;}
+.prayer-item {background-color: #F0F6EC;border: 1px solid #284F3B;border-radius: 12px;padding: 18px;display: flex;flex-direction: column;gap: 10px;}
+.prayer-item:hover {background-color: #DCE9D5;}
+.prayer-item span:first-child {font-size: 15px;color: #52665A;font-weight: bold;}
+.prayer-item span:last-child {font-size: 22px;font-weight: bold;color: #193D2B;}
+
+/* RELIGIOUS SUGGESTION */
+.suggestion-section {background-color: #DCE9D5;}
+#suggestion {color: #284F3B;line-height: 1.6;}
+
+/*PAGE 2*/
+
+/* DAILY DUA */
+.dua-section {background-color: #DCE9D5;}
+#dua {text-align: center;padding: 20px;}
+#duatext {font-size: 35px;line-height: 2;color: #284F3B;margin-bottom: 15px;}
+#translation {font-size: 15px;color: #52665A;line-height: 1.6;}
+#DuaReference {font-size: 12px;color: #000000;margin-top: 15px;}
+#nextDuaBtn {padding: 12px;background-color: #284F3B;color: white;border: none;border-radius: 7px;cursor: pointer;display: block;margin: auto;}
+
+/* MONTHLY CALENDAR */
+#calendarPage section:has(#calendar) {background-color: #284F3B;color: white;}
+.calendar-navigation {display: flex;justify-content: space-between;align-items: center;gap: 10px;margin-bottom: 20px;}
+.calendar-navigation h3 {font-size: 17px;}
+.calendar-navigation button {padding: 9px 14px;background-color: #DCE9D5;color: #284F3B;border: none;border-radius: 6px;cursor: pointer;}
+#calendar {display: grid;grid-template-columns: repeat(7, 1fr);gap: 8px;text-align: center;}
+.calendar-weekday {font-weight: bold;color: #e9ecea;padding: 10px 0;font-size: 13px;}
+.calendar-day {padding: 12px 5px;border: none;border-radius: 7px;background-color: #F0F6EC;color: #284F3B;cursor: pointer;font-size: 14px;}
+.calendar-day:hover {background-color: #DCE9D5;}
+.calendar-day.selected {background-color: #000000;color: white;}
+
+/* SELECTED DATE PRAYER TIMES */
+#selectedDate {color: #52665A;font-size: 13px;margin-bottom: 15px;}
+#selectedPrayerTimes {grid-template-columns: repeat(3, 1fr);gap: 8px;}
+#selectedPrayerTimes .prayer-item {padding: 10px;gap: 5px;border-radius: 8px;}
+#selectedPrayerTimes .prayer-item span:first-child {font-size: 12px;}
+#selectedPrayerTimes .prayer-item span:last-child {font-size: 16px;}
+
+/*ACTIVITY REMINDERS */
+.reminder-section form {display: flex;flex-direction: column;gap: 10px;}
+.reminder-section label {font-size: 14px;font-weight: bold;margin-top: 5px;}
+input, textarea {width: 100%;padding: 12px;border: 1px solid #CCCCCC;border-radius: 7px;font-family: Arial, sans-serif;font-size: 14px;}
+textarea {min-height: 80px;resize: vertical;}
+button {font-family: Arial, sans-serif;}
+#saveReminderBtn {padding: 12px;background-color: #284F3B;color: white;border: none;border-radius: 7px;cursor: pointer;}
+#cancelEditBtn {padding: 12px;background-color: #f3f3f3;color: rgb(0, 0, 0);border: none;border-radius: 7px;cursor: pointer;}
+
+/* SAVED REMINDERS */
+#reminderList {margin-top: 20px;}
+.reminder-card {background-color: #284F3B;color: white;padding: 25px;border-radius: 18px;margin-bottom: 15px;}
+.reminder-card h3 {font-size: 22px;font-weight: bold;margin-bottom: 10px;}
+.reminder-description {font-size: 15px;color: #f3f3f3;margin-bottom: 15px;line-height: 1.5;}
+.reminder-date {font-size: 14px;color: #f3f3f3;margin-bottom: 15px;}
+
+/* EDIT AND DELETE BUTTONS */
+.reminder-buttons {display: flex;gap: 12px;margin-top: 18px;}
+.edit-btn {flex: 1;background-color: #BFD6B5;color: #284F3B;padding: 12px;border: none;border-radius: 7px;cursor: pointer;font-size: 14px;}
+.delete-btn {flex: 1;background-color: #C94747;color:  white;padding: 12px;border: none;border-radius: 7px;cursor: pointer;font-size: 14px;}
+
+button:hover {opacity: 0.9;}
+
+/* SMALL SCREENS */
+@media (max-width: 600px) {
+    body {padding: 12px;}
+    section {padding: 16px;}
+    nav button {padding: 10px 15px;font-size: 12px;}
+    #countdown {font-size: 30px;}
+    #calendar {gap: 4px;}
+    .calendar-day {padding: 10px 3px;font-size: 12px;}
+    #prayerTimes {grid-template-columns: 1fr;}
+    #selectedPrayerTimes {grid-template-columns: 1fr;}
+}

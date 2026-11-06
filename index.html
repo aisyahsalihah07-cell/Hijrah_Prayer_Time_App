@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hijrah</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Hijrah</h1>
+        <p>Your Daily Prayer Companion</p>
+
+        <nav>
+            <button id="dashboardBtn" class="active">Prayer Dashboard</button>
+            <button id="calendarBtn">Prayer Calendar</button>
+        </nav>
+    </header>
+
+<!-- PAGE 1  -->     
+<main id="dashboardPage" class="page">
+
+<section class="location-section">
+
+    <label for="PrayerZone">Select Your Location</label>
+
+    <!--LOCATION LIST-->
+    <select id="PrayerZone">
+        <option value="PHG01">PHG01 - Pulau Tioman</option>
+        <option value="PHG02" selected>PHG02 - Kuantan, Pekan, Muadzam Shah</option>
+        <option value="PHG03">PHG03 - Jerantut, Temerloh, Maran, Bera, Chenor, Jengka</option>
+        <option value="PHG04">PHG04 - Bentong, Raub, Kuala Lipis</option>
+        <option value="PHG05">PHG05 - Genting Sempah, Janda Baik, Bukit Tinggi</option>
+        <option value="PHG06">PHG06 - Cameron Highlands, Genting Highlands, Bukit Fraser</option>
+        <option value="PHG07">PHG07 - Zon Khas Daerah Rompin</option>
+    </select>
+
+    <button id="refreshBtn">Refresh</button>
+
+</section>
+
+<!-- CURRENT DATE AND TIME -->
+<section class="current-section">
+
+    <p class="clock-label">Clock</p>
+    <p id="currentDate"></p>
+    <p id="currentTime"></p>
+    <p id="apiMessage">Select your location and load prayer times.</p>
+
+</section>
+
+<!-- NEXT PRAYER COUNTDOWN -->
+<section class="next-prayer">
+
+    <p>NEXT PRAYER</p>
+    <h2 id="nextPrayerName">--</h2>
+    <h1 id="countdown">00:00:00</h1>
+    <p id="nextPrayerMessage">Time remaining until next prayer</p>
+
+</section>
+
+<!-- PRAYER TRACKER -->
+<section class="tracker-section">
+
+    <h2>Daily Prayer Tracker</h2>
+    <p>Mark the prayers you have completed today.</p>
+
+    <div class="tracker-container">
+
+        <div class="tracker-item">
+            <button class="tracker-circle" data-prayer="Subuh">
+                <span></span>
+            </button>
+            <p>Subuh</p>
+        </div>
+
+        <div class="tracker-item">
+            <button class="tracker-circle" data-prayer="Zohor">
+                <span></span>
+            </button>
+            <p>Zohor</p>
+        </div>
+
+        <div class="tracker-item">
+            <button class="tracker-circle" data-prayer="Asar">
+                <span></span>
+            </button>
+            <p>Asar</p>
+        </div>
+
+        <div class="tracker-item">
+            <button class="tracker-circle" data-prayer="Maghrib">
+                <span></span>
+            </button>
+            <p>Maghrib</p>
+        </div>
+
+        <div class="tracker-item">
+            <button class="tracker-circle" data-prayer="Isyak">
+                <span></span>
+            </button>
+            <p>Isyak</p>
+        </div>
+    </div>
+
+    <p id="trackerMessage">0 out of 5 prayers completed.</p>
+</section>
+
+<!-- PRAYER TIME LIST -->
+<section class="prayer-section">
+
+    <h2>Today's Prayer Times</h2>
+    <div id="prayerTimes"></div>
+
+</section>
+
+
+<!-- ACTIVITY SUGGESTION -->
+<section class="suggestion-section">
+    <h2>Religious Activity Suggestion</h2>
+    <div id="suggestion"></div>
+
+</section>
+</main>
+
+<!-- PAGE 2: PRAYER CALENDAR -->
+<main id="calendarPage" class="page" hidden>
+
+<section class="dua-section">
+    <h2>Daily Dua Suggestion</h2>
+
+    <div id="dua">
+        <p id="DuaReference"></p> <br>
+        <p id="duatext"></p>
+        <p id="translation"></p>
+    </div>
+
+    <button id="nextDuaBtn">Next Dua</button>
+</section>
+
+
+<!-- MONTHLY PRAYER CALENDAR -->
+<section class="calendar-section">
+
+    <h2>Monthly Prayer Calendar</h2>
+
+    <!-- MONTH NAVIGATION -->
+    <div class="calendar-navigation">
+        <button id="previousMonthBtn">Previous</button>
+
+        <h3 id="calendarMonth"></h3>
+
+        <button id="nextMonthBtn">Next</button>
+    </div>
+
+    <!-- CALENDAR DAYS -->
+    <div id="calendar"></div>
+
+    <p id="selectedDateMessage">Select a date to view that day prayer times.</p>
+
+</section>
+
+
+
+<!-- SELECTED DATE PRAYER TIMES -->
+<section class="selected-prayer-section">
+
+    <h2>Prayer Times</h2>
+
+    <p id="selectedDate"></p>
+
+    <div id="selectedPrayerTimes">
+
+        <p>Select a date from the calendar.</p>
+
+    </div>
+
+</section>
+
+
+<!-- ACTIVITY REMINDERS -->
+<section class="reminder-section">
+
+    <h2>My Activity Reminders</h2>
+
+    <form id="reminderForm">
+
+        <label for="activityName">Activity Name</label>
+
+        <input
+            type="text"
+            id="activityName"
+            placeholder="Example: Read Quran"
+            required
+        >
+
+        <label for="activityDate">Date</label>
+
+        <input
+            type="date"
+            id="activityDate"
+            required
+        >
+
+        <label for="activityTime">Time</label>
+
+        <input
+            type="time"
+            id="activityTime"
+            required
+        >
+
+        <label for="activityDescription">Description</label>
+
+        <textarea
+            id="activityDescription"
+            placeholder="Enter activity details..."
+        ></textarea>
+
+
+        <button type="submit" id="saveReminderBtn">
+            Add Reminder
+        </button>
+
+        <button type="button" id="cancelEditBtn" hidden>
+            Cancel Edit
+        </button>
+
+    </form>
+
+    <br>
+    <h3>Saved Reminders</h3>
+
+    <div id="reminderList"><p>No reminders saved yet.</p></div>
+
+</section>
+
+</main>
+
+<!-- JAVASCRIPT -->
+<script src="main.js"></script>
+
+</body>
+</html>
